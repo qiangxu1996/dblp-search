@@ -1,3 +1,49 @@
+# DBLP Search
+
+## Requirements
+
+- Node.js
+
+## Setup
+
+### App Search
+
+1. Set up and run Enterprise Search
+   
+   - The simplest option is using Docker following the [guide](https://www.elastic.co/guide/en/enterprise-search/current/docker.html#docker-compose-example)
+
+2. Log in at [http://localhost:5601](http://localhost:5601/)
+
+3. Copy the Private API Key at Enterprise Search → App Search → Credentials
+
+4. Install the Python package `elastic-enterprise-search`
+
+5. Populate the CSRankings data. This may take a while
+   
+   ```bash
+   python dblp2elastic.py <private api key>
+   ```
+
+### Search UI
+
+1. Fill the `searchKey` in `src/config/engine.json` with the one copied from App Search
+
+2. Install dependencies and run
+   
+   ```bash
+   npm install
+   npm start
+   ```
+
+Below is the original README for [elastic/app-search-reference-ui-react](https://github.com/elastic/app-search-reference-ui-react).
+
+---
+
+<p align="center"><img src="https://github.com/elastic/app-search-reference-ui-react/blob/master/logo-app-search.png?raw=true" alt="Elastic App Search Logo"></p>
+
+> A configurable, generic search UI for
+> any [Elastic App Search](https://www.elastic.co/products/app-search) Engine.
+
 ## Contents
 
 - [Getting started](#getting-started-)
@@ -16,6 +62,7 @@ To set up and run this project, follow the instructions below.
 Requires [npm](https://www.npmjs.com/).
 
 Dependencies:
+
 - Node v16.13.0
 
 One can leverage [NVM](https://github.com/nvm-sh/nvm) to install Node before proceeding to start the application by running the following commands:

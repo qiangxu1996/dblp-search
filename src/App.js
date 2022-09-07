@@ -36,6 +36,7 @@ const connector = new AppSearchAPIConnector({
 const config = {
   searchQuery: {
     facets: buildFacetConfigFromConfig(),
+    disjunctiveFacets: getFacetFields(),
     ...buildSearchOptionsFromConfig()
   },
   autocompleteQuery: buildAutocompleteQueryConfig(),
@@ -52,7 +53,7 @@ export default function App() {
             <div className="App">
               <ErrorBoundary>
                 <Layout
-                  header={<SearchBox autocompleteSuggestions={true} />}
+                  header={<SearchBox shouldClearFilters={false} autocompleteSuggestions={true} />}
                   sideContent={
                     <div>
                       {wasSearched && (
@@ -62,7 +63,7 @@ export default function App() {
                         />
                       )}
                       {getFacetFields().map(field => (
-                        <Facet key={field} field={field} label={field} />
+                        <Facet key={field} field={field} filterType="any" label={field} isFilterable={true} />
                       ))}
                     </div>
                   }

@@ -1,26 +1,34 @@
 {
-  "endpointBase": "https://search-ui-sandbox.ent.us-central1.gcp.cloud.es.io",
-  "engineName": "national-parks",
-  "searchKey": "search-nyxkw1fuqex9qjhfvatbqfmw",
-  "searchFields": ["title", "description", "states"],
+  "endpointBase": "http://127.0.0.1:3002/",
+  "engineName": "dblp",
+  "searchKey": "",
   "resultFields": [
-    "id",
+    "ee",
+    "note",
+    "editor",
+    "year",
+    "author",
     "title",
-    "description",
-    "states",
-    "visitors",
-    "square_km",
-    "world_heritage_site",
-    "date_established",
-    "image_url",
-    "location",
-    "acres",
-    "nps_link"
+    "cdrom",
+    "url",
+    "volume",
+    "number",
+    "pages",
+    "journal",
+    "cite",
+    "booktitle",
+    "crossref"
   ],
-  "querySuggestFields": ["title"],
   "titleField": "title",
-  "urlField": "nps_link",
-  "thumbnailField": "image_url",
-  "sortFields": ["title", "states"],
-  "facets": ["states", "world_heritage_site"]
+  "urlField": "ee",
+  "sortFields": [
+    "year",
+    "booktitle",
+    "journal"
+  ],
+  "facets": [
+    "year",
+    "booktitle",
+    "journal"
+  ]
 }
