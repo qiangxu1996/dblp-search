@@ -1,5 +1,7 @@
 # DBLP Search
 
+![](dblp-search-ui.webp)
+
 ## Requirements
 
 - Node.js
